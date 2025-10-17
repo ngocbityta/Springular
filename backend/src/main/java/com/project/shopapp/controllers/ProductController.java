@@ -196,8 +196,8 @@ public class ProductController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-    //@PostMapping("/generateFakeProducts")
-    private ResponseEntity<String> generateFakeProducts() {
+    @PostMapping("/generateFakeProducts")
+    public ResponseEntity<String> generateFakeProducts() {
         Faker faker = new Faker();
         for (int i = 0; i < 1_000_000; i++) {
             String productName = faker.commerce().productName();
